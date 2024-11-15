@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <title>Smurf HU</title>
+  </head>
+  <body>
+
+    <div class="popup-overlay" id="popup">
+      <div class="popup-content">
+        <div class="image-container">
+          <img src="your-image.jpg" alt="Popup Image" id="popup-image">
+        </div>
+        <div class="popup-controls">
+          <button class="x" onclick="closePopup()">X</button>
+          <button onclick="zoomIn()"><img src="images/zoom-in.png" alt=""></button>
+          <button onclick="zoomOut()"><img src="images/zoom-out.png" alt=""></button>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    <header>
+      <div class="logo">
+        <a href="index.html">
+          <img src="images/smurflogo.png" alt="" height="100" width="150" />
+
+        </a>
+      </div>
+      <div class="search">
+        <i class="fa fa-search"></i>
+        <input
+          class="nav-search"
+          type="text"
+          size="40"
+          placeholder="ابحث عن ما تريد هنا"
+        />
+      </div>
+
+      <div class="nav-menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </header>
+    <!-- menu -->
+    <div class="menu">
+      <i class="fa-solid fa-x close"></i>
+      <ul>
+        <li><a href="#" onclick="openPopup('images/map.png')">خريطة الجامعة</a></li>
+        <li><a href="#" onclick="openPopup('images/lab-names.jpg')">المختبرات</a></li>
+        <li><a href="#contact" id="contact-leader">للتواصل</a></li>
+      </ul>
+    </div>
+    <!-- menu -->
+
+    <div class="content" id="main">
+      <div class="steps">
+        <img src="images/steps.png" alt="" />
+        <p class="item-title">اجراءات</p>
+      </div>
+
+      <div class="Terminologies">
+        <img src="images/trem.png" alt="" />
+        <p class="item-title">مصطلحات</p>
+      </div>
+
+      <div class="tipsAndAlerts">
+        <img src="images/tips.png" alt="" />
+        <p class="item-title">نصائح وتوجيهات</p>
+      </div>
+
+      <div class="webs">
+        <img src="images/webs.png" alt="" />
+        <p class="item-title">مصادر ومواقع</p>
+      </div>
+
+      <div class="test">
+        <img src="images/test.png" alt="" />
+        <p class="item-title">تست بانك</p>
+      </div>
+
+      <div class="low">
+        <img src="images/rules.png" alt="" />
+        <p class="item-title">قوانين الجامعة</p>
+      </div>
+    </div>
+
+<!-- tips -->
+<div class="content" id="tips">
+  <i class="fas fa-arrow-left back"></i>      
+
+      <div class="religion">
+        <img src="images/religion.png" alt="" />
+        <p class="item-title">نصائح دينية</p>
+      </div>
+
+      <div class="std-tips">
+        <img src="images/std-tip.png" alt="" />
+        <p class="item-title">نصائح طلابية</p>
+      </div>
+       
+      
+      <div class="eco">
+        <img src="images/eco.png" alt="" />
+        <p class="item-title">نصائح اقتصادية</p> 
+      </div>
+      
+      <div class="serv">
+        <img src="images/service.png" alt="" />
+        <p class="item-title">نصائح خدماتية</p> 
+      </div>
+
+      <div class="std-senpai">
+        <img src="images/std-senpai-tips.png" alt="" />
+        <p class="item-title">نصائح من طلاب</p>
+      </div>
+
+</div>
+
+
+
+
+<!-- tips-->
+
+<!-- steps -->
+<div class="content" id="steps">
+  <i class="fas fa-arrow-left back"></i>      
+
+      <div class="note">
+        <img src="images/serv-military.png" alt="" />
+        <p class="item-title">تجديد دفتر خدمة العلم</p>
+      </div>
+
+      <div class="fail">
+        <img src="images/fail.png" alt="" />
+        <p class="item-title">اسقاط مادة</p>
+      </div>
+       
+      <div class="pull-back">
+        <img src="images/pull-back.png" alt="" />
+        <p class="item-title">سحب مادة</p>
+      </div>
+       
+      <div class="add-subject">
+        <img src="images/add.png" alt="" />
+        <p class="item-title">تسجيل مواد</p>
+      </div>
+
+      <div class="network">
+        <img src="images/network.png" alt="" />
+        <p class="item-title">تسجيل دخول لشبكة الانترنت</p>
+      </div>
+       
+
+</div>
+<!-- steps-->
+
+<!-- webs -->
+<div class="content" id="webs">
+  <i class="fas fa-arrow-left back"></i>      
+
+      <div class="w-t-p">
+        <img src="images/wtp.png" alt="" />
+        <p class="item-title">word to pdf</p>
+      </div>
+
+      <div class="gpt">
+        <img src="images/gpt.png" alt="" />
+        <p class="item-title">chatGPT
+          <br>  اداة ذكاء اصطناعي
+        </p>
+      </div>
+       
+      <div class="slide-trans">
+        <img src="images/slide-trans.png" alt="" />
+        <p class="item-title">مترجم سلايدات</p>
+      </div>
+       
+      <div class="t-t-v">
+        <img src="images/t-t-v.png" alt="" />
+        <p class="item-title">نص الى كلام</p>
+      </div>
+       
+
+</div>
+<!-- webs-->
+
+<!-- vocabulary -->
+<div class="content" id="table">
+  <i class="fas fa-arrow-left back"></i>      
+  <p class="table-title">السلام عليكم جميعا</p>
+
+      <p class="table-title">
+        بما انه السنافر بلشت دراسة بحب اقدملكم اهم الاشياء اللي لازم تعرفوها مشان تحضرو حالكم , وعملتهم على شكل جدول كالتالي 
+      </p>
+
+      <table border="1" class="t-table">
+      
+        
+
+        <thead>
+          <tr>
+              <th>English</th>
+              <th>بالعربي</th>
+              <th>شرح</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr>
+              <td>slide</td>
+              <td>شريحة</td>
+              <td>هي الصفحات اللي داخل ال <br>PowerPoint</td>
+          </tr>
+          <tr>
+              <td>break</td>
+              <td>استراحة</td>
+              <td>الاستراحة بين المحاضرات</td>
+          </tr>
+          <tr>
+              <td>syllabus</td>
+              <td>خطة المادة</td>
+              <td>لكل مادة يوجد لديها خطة , وعادة تعطى بأول محاضرة من المادة</td>
+          </tr>
+          <tr>
+              <td>chapter</td>
+              <td>وحدة</td>
+              <td>كل مادة تتكون اما من عدة وحد او كتاب معين</td>
+          </tr>
+          <tr>
+              <td>Mid exam</td>
+              <td>امتحان نصف الفصل</td>
+              <td>امتحان نصف الفصل. لكل مادة نظام امتحانات اما فيرست سكند فاينل او ميد فاينل</td>
+          </tr>
+          <tr>
+              <td>First exam</td>
+              <td>الامتحان الاول</td>
+              <td>الامتحان الاول وغالبا موعده قبل الميد</td>
+          </tr>
+          <tr>
+              <td>Second exam</td>
+              <td>الامتحان الثاني</td>
+              <td>الامتحان الثاني وغالبا موعده بعد الميد</td>
+          </tr>
+          <tr>
+              <td>final</td>
+              <td>الامتحان النهائي</td>
+              <td>الامتحان النهائي وموعده في نهاية الفصل</td>
+          </tr>
+          <tr>
+              <td>quiz</td>
+              <td>امتحان قصير</td>
+              <td>امتحان قصير واحيانا يكون مفاجئ واحيانا بموعد متفق عليه من قبل الدكتور</td>
+          </tr>
+          <tr>
+              <td>project</td>
+              <td>مشروع</td>
+              <td>بعض المواد يكون فيها مشروع اما فردي او ضمن فريق</td>
+          </tr>
+          <tr>
+              <td>presentation</td>
+              <td>تقديم</td>
+              <td>بعض المواد ممكن يطلب الدكتور منك بشكل فردي او ضمن فريق تقديم درس عن موضوع معين امام جميع زملائك بالقاعة</td>
+          </tr>
+          <tr>
+              <td>Smurf</td>
+              <td>سنفور/ة</td>
+              <td>طالب اول سنتين يسمى ب سنفور واخر فصل يسمى خريج</td>
+          </tr>
+          <tr>
+              <td>Credit Hours</td>
+              <td>الساعات المعتمدة</td>
+              <td>عدد الساعات للمواد. كل مادة لها ساعات محددة والاغلب 3، وهي عدد الساعات التي تأخذها بالاسبوع</td>
+          </tr>
+          <tr>
+              <td>curve up</td>
+              <td>رفع المنحنى</td>
+              <td>عندما تكون العلامات سيئة والطلاب انظلموا بالامتحانات، يمكن للدكتور تعديل المنحنى البياني للعلامات</td>
+          </tr>
+          <tr>
+              <td>GPA (Grade Point Average)</td>
+              <td>المعدل التراكمي</td>
+              <td>المعدل الكامل الخاص بك. الفرق بينه وبين المعدل الفصلي هو أن التراكمي يشمل سنواتك بالكامل</td>
+          </tr>
+          <tr>
+              <td>Office Hours</td>
+              <td>الساعات المكتبية</td>
+              <td>الوقت الذي يكون فيه الدكتور متاحاً للإجابة على الأسئلة أو تقديم المساعدة</td>
+          </tr>
+          <tr>
+              <td>Lab</td>
+              <td>مختبر</td>
+              <td>محاضرة عملية أو داخل مختبر</td>
+          </tr>
+          <tr>
+              <td>Student ID</td>
+              <td>الرقم الجامعي</td>
+              <td>الرقم الجامعي الخاص بكل طالب</td>
+          </tr>
+          <tr>
+              <td>Semester</td>
+              <td>الفصل الدراسي</td>
+              <td>الفصل الدراسي</td>
+          </tr>
+          <tr>
+              <td>Internship</td>
+              <td>تدريب</td>
+              <td>بعض التخصصات تتضمن تدريباً أو تدريباً ميدانياً</td>
+          </tr>
+          <tr>
+              <td>square</td>
+              <td>مربع</td>
+              <td>بعض الكليات يوجد بها مربع يتجمع فيه طلاب الكلية</td>
+          </tr>
+          <tr>
+              <td>self-study</td>
+              <td>دراسة ذاتية</td>
+              <td>عندما يطلب الدكتور منك الدراسة الذاتية، يعتبرها بعضهم كتخطي لجزء معين</td>
+          </tr>
+      </tbody>
+      
+      </table>
+</div>
+<!-- vocabulary -->
+
+
+
+
+    <footer>
+      <div class="footer-content" id="contact">
+        <p>للتواصل </p>
+        <div class="social">
+          <a href="https://www.facebook.com/aldgoor/"
+            ><i class="fab fa-facebook"></i
+          ></a>
+          <a href="https://www.instagram.com/amjad_dgoor17/"
+            ><i class="fab fa-instagram"></i
+          ></a>
+          <a href="mailto:amjadman21@yahoo.com"><i class="fab fa-yahoo"></i></a>
+          <a href="https://www.linkedin.com/in/amjad-aldgoor-333988268/"
+            ><i class="fab fa-linkedin"></i
+          ></a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="jquery/plug.js"></script>
+    <script src="jquery/qry.js"></script>
+    <script src="pic.js"></script>
+    
+
+  </body>
+</html>

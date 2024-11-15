@@ -1,0 +1,493 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  overflow: auto;
+  font-weight: 500;
+}
+
+:root {
+  --smurf: #4695d6;
+}
+
+/*start header*/
+
+header {
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+  border-bottom: 1px solid black;
+}
+
+.logo {
+  position: relative;
+  left: -150px;
+  opacity: 0;
+}
+
+.search {
+  padding: 10px 15px;
+  border: 2px solid var(--smurf);
+  border-radius: 50px;
+  direction: rtl;
+  position: relative;
+  top: -100px;
+}
+
+.nav-search {
+  padding: 5px 10px;
+  border: none;
+  direction: rtl;
+  padding-right: 30px; /* Make space for the icon */
+}
+
+.search i {
+  position: absolute;
+  left: 10px;
+  top: 15px;
+  cursor: pointer;
+}
+
+input[type="text"]:focus {
+  outline: none;
+}
+
+.nav-menu-toggle {
+  padding: 10px 30px;
+  display: block;
+  position: relative;
+  right: -100px;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.nav-menu-toggle span {
+  display: block;
+  height: 2px;
+  width: 20px;
+  background-color: black;
+  border: 1px solid black;
+  margin: 5px;
+}
+
+/*end header*/
+
+/*start menu*/
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: white;
+  position: fixed;
+  top: 0;
+  right: -210px;
+  width: 200px;
+  height: 100vh;
+  border-left: 4px solid black;
+  text-align: center;
+  z-index: 3; /* Ensure it appears on top */
+  overflow: hidden; /* Add this to prevent overflow */
+}
+
+.menu ul {
+  list-style: none;
+  width: 100%;
+  margin-top: 30px;
+  padding: 0; /* Ensures there's no extra padding */
+}
+
+.menu ul li {
+  width: 100%;
+  margin: 20px 0; /* Vertical margin */
+}
+
+.menu ul li a {
+  color: black;
+  padding: 15px 0;
+  font-size: 25px;
+  text-decoration: none;
+  display: block;
+  width: 100%;
+  text-align: center;
+  transition: background-color 0.5s ease;
+}
+
+.menu ul li a:hover {
+  color: white;
+  transition: 0.2s;
+  background-color: var(--smurf);
+}
+
+  /*start for pictures*/
+    
+        /* Popup Overlay */
+    /* Popup Overlay */
+/* Popup Overlay */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+  z-index: 5;
+
+}
+
+.popup-overlay.active {
+  opacity: 1;
+  visibility: visible;
+  z-index: 5;
+}
+
+/* Popup Content */
+.popup-content {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background: transparent;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Image Container */
+.image-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Maintain aspect ratio while filling container */
+  transform: scale(1); /* Initial zoom scale */
+  transition: transform 0.3s ease;
+}
+
+
+/* Popup Controls */
+.popup-controls {
+  position: absolute;
+  bottom: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  z-index: 1;
+  background-color: var(--smurf);
+}
+
+.popup-controls img {
+  width: 30px;
+  height: 30px;
+}
+
+.popup-controls button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.x {
+  position: fixed;
+  right: 20px;
+  top: 15px;
+  background-color: transparent;
+  border: none;
+  color: var(--smurf);
+  font-size: 30px;
+  cursor: pointer;
+  z-index: 6;
+  transition: color 0.2s ease;
+}
+
+.x:hover {
+  color: rgb(129, 117, 117);
+}
+/* Media Query for small screens */
+@media (max-width: 480px) {
+  .popup-controls img {
+    width: 25px;
+    height: 25px;
+  }
+
+  .x {
+    font-size: 24px;
+    right: 10px;
+    top: 10px;
+  }
+}
+
+
+
+
+  /*end for pictures*/
+
+.close {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.close:hover{
+  color: var(--smurf);
+}
+/*end menu*/
+
+/*start content*/
+
+.content {
+  height: 100%;
+  width: 100%;
+  background-color: var(--smurf);
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.content div {
+  height: 40%;
+  width: 200px;
+  border-radius: 40px;
+  margin: 30px 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--smurf);
+  transition: background-color .2s ease;
+  position: relative;
+  left: -1000px;
+  opacity: 0;
+}
+
+.content div:hover {
+  background-color: black;
+}
+
+.content div img {
+  height: 150px;
+  width: 70%;
+  border-radius: 40px;
+  transition: opacity 0.2s ease;
+}
+
+.content div p {
+  margin: 10px;
+  font-size: 30px;
+  color: white;
+  text-align: center;
+  transition: opacity 0.2s ease;
+}
+
+.content div p:hover {
+  opacity: 0.8;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.content div img:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+/*start table*/
+
+#table{
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  padding-top: 50px;
+  position: relative;
+}
+
+#table p{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 30px;
+  text-align: center;
+
+}
+.back{
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  font-size: 40px;
+  cursor: pointer;
+  color: white;
+  transition: color .4s ease;
+}
+
+.back:hover{
+  color: black;
+}
+
+.content .t-table{
+  width: 70%;
+  margin: 20px;
+  border: 5px solid black;
+  background-color: rgb(56, 33, 33);
+}
+
+.content .t-table th{
+  border: none;
+  border-bottom: 1px solid white;
+  padding: 20px;
+  margin:  auto;
+  font-size: 30px;
+}
+.content .t-table td{
+  border: none;
+  border-right: none;
+  padding: 20px;
+  margin:  auto;
+  font-size: 20px;
+  text-align: center;
+  width: 10%;
+}
+/*end table*/
+
+#tips,
+#steps,
+#webs,
+#std-slide,
+#rel-slide,
+#eco-slide,
+#serv-slide{
+  display: none;
+  position: relative;
+}
+
+
+/*start tips*/
+
+.slideshow-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row ;
+  width: 100%;
+  background-color: var(--smurf);
+  padding: 45px 0;
+}
+
+
+
+.nav-button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 24px;
+  height: 100px;
+  
+  
+}
+
+.nav-button:hover {
+  background-color: #45a049;
+}
+
+.advice-box {
+  width: 500px;
+  height: 400px;
+  text-align: center;
+  padding: 20px;
+  border: 2px solid #ddd;
+  margin: 0 10px;
+  background-color: #f5f5dc;
+  background-image: linear-gradient(to bottom, #4695d6, #1a3d6d); /* Blue to Dark Blue */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#advice-number {
+  font-size: 30px;
+  margin: 0;
+  font-weight: bold;
+}
+
+#advice-title {
+  font-size: 30px;
+  margin: 10px 0;
+  font-weight: bold;
+}
+
+#advice-description {
+  font-size: 25px;
+}
+
+#advice-number, #advice-title, #advice-description {
+  color: white;
+}
+
+
+
+/*end tips*/
+
+
+/*end content*/
+
+/* start footer */
+
+footer {
+  background-color: black;
+  height: 200px;
+  width: 100%;
+}
+
+.social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  padding: 20px;
+  font-size: 50px;
+}
+
+footer p {
+  color: white;
+  text-align: center;
+  padding: 20px;
+  font-size: 20px;
+}
+
+footer a {
+  color: white;
+  text-decoration: none;
+  transition: 0.2s;
+  margin: 10px;
+}
+
+/* end footer */
