@@ -9,6 +9,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
       rel="stylesheet"
     />
+    <script src="https://unpkg.com/@panzoom/panzoom@latest/dist/panzoom.min.js"></script>
     <title>Smurf HU</title>
   </head>
   <body>
@@ -16,12 +17,16 @@
     <div class="popup-overlay" id="popup">
       <div class="popup-content">
         <div class="image-container">
-          <img src="your-image.jpg" alt="Popup Image" id="popup-image">
+          <img src="images/your-image.jpg" alt="Popup Image" id="popup-image">
         </div>
         <div class="popup-controls">
           <button class="x" onclick="closePopup()">X</button>
-          <button onclick="zoomIn()"><img src="images/zoom-in.png" alt=""></button>
-          <button onclick="zoomOut()"><img src="images/zoom-out.png" alt=""></button>
+          <button onclick="zoomIn()">
+            <img src="images/zoom-in.png" alt="">
+          </button>
+          <button onclick="zoomOut()">
+            <img src="images/zoom-out.png" alt="">
+          </button>
         </div>
       </div>
     </div>
@@ -35,15 +40,19 @@
 
         </a>
       </div>
-      <div class="search">
+
+      <!-- <div class="search">
         <i class="fa fa-search"></i>
         <input
           class="nav-search"
           type="text"
           size="40"
           placeholder="ابحث عن ما تريد هنا"
+          id="searchInput" 
         />
-      </div>
+      </div> -->
+
+      
 
       <div class="nav-menu-toggle">
         <span></span>
@@ -61,6 +70,9 @@
       </ul>
     </div>
     <!-- menu -->
+
+    <!-- <div class="sreach-result content">
+    </div> -->
 
     <div class="content" id="main">
       <div class="steps">
@@ -92,34 +104,36 @@
         <img src="images/rules.png" alt="" />
         <p class="item-title">قوانين الجامعة</p>
       </div>
+
+
     </div>
 
 <!-- tips -->
 <div class="content" id="tips">
   <i class="fas fa-arrow-left back"></i>      
 
-      <div class="religion">
-        <img src="images/religion.png" alt="" />
+      <div class="religion" data-key="rel">
+        <img src="images/religion.png"  alt="" />
         <p class="item-title">نصائح دينية</p>
       </div>
 
-      <div class="std-tips">
+      <div class="std-tips" data-key="std">
         <img src="images/std-tip.png" alt="" />
         <p class="item-title">نصائح طلابية</p>
       </div>
        
       
-      <div class="eco">
+      <div class="eco" data-key="eco">
         <img src="images/eco.png" alt="" />
         <p class="item-title">نصائح اقتصادية</p> 
       </div>
       
-      <div class="serv">
+      <div class="serv" data-key="serv">
         <img src="images/service.png" alt="" />
         <p class="item-title">نصائح خدماتية</p> 
       </div>
 
-      <div class="std-senpai">
+      <div class="std-senpai" data-key="std_to_std" id="std-to-std">
         <img src="images/std-senpai-tips.png" alt="" />
         <p class="item-title">نصائح من طلاب</p>
       </div>
@@ -135,29 +149,35 @@
 <div class="content" id="steps">
   <i class="fas fa-arrow-left back"></i>      
 
-      <div class="note">
+      <div class="note" data-key="army">
         <img src="images/serv-military.png" alt="" />
         <p class="item-title">تجديد دفتر خدمة العلم</p>
       </div>
 
-      <div class="fail">
-        <img src="images/fail.png" alt="" />
+      <div class="fail" data-key="drop_sub">
+        <img src="images/fail.png"  alt="" />
         <p class="item-title">اسقاط مادة</p>
       </div>
        
-      <div class="pull-back">
+      <div class="pull-back" data-key="withdraw_sub">
         <img src="images/pull-back.png" alt="" />
         <p class="item-title">سحب مادة</p>
       </div>
        
-      <div class="add-subject">
+      <div class="add-subject" data-key="add_sub">
         <img src="images/add.png" alt="" />
         <p class="item-title">تسجيل مواد</p>
       </div>
 
-      <div class="network">
+      <div class="network" data-key="network">
         <img src="images/network.png" alt="" />
         <p class="item-title">تسجيل دخول لشبكة الانترنت</p>
+      </div>
+
+      
+      <div class="graduate" id="graduate" data-key="graduate">
+        <img src="images/graduate.png" alt="" />
+        <p class="item-title">اجراءات التخريج</p>
       </div>
        
 
@@ -339,22 +359,28 @@
         <p>للتواصل </p>
         <div class="social">
           <a href="https://www.facebook.com/aldgoor/"
-            ><i class="fab fa-facebook"></i
-          ></a>
-          <a href="https://www.instagram.com/amjad_dgoor17/"
+          ><i class="fab fa-facebook"></i
+            ></a>
+            <a href="https://www.instagram.com/amjad_dgoor17/"
             ><i class="fab fa-instagram"></i
-          ></a>
-          <a href="mailto:amjadman21@yahoo.com"><i class="fab fa-yahoo"></i></a>
-          <a href="https://www.linkedin.com/in/amjad-aldgoor-333988268/"
-            ><i class="fab fa-linkedin"></i
-          ></a>
-        </div>
+              ></a>
+              <a href="mailto:amjadman21@yahoo.com"><i class="fab fa-yahoo"></i></a>
+              <a href="https://www.linkedin.com/in/amjad-aldgoor-333988268/"
+              ><i class="fab fa-linkedin"></i
+                ></a>
+              </div>
+              <p>v1.0.0</p>
       </div>
     </footer>
 
     <script src="jquery/plug.js"></script>
     <script src="jquery/qry.js"></script>
     <script src="pic.js"></script>
+    <script src="script.js"></script>
+    <!--<script src="search.js"></script> -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
     
 
   </body>

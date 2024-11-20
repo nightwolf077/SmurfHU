@@ -1,4 +1,4 @@
-const advices = [
+var advices = [
     { number: 1, title: "التمسك بالصلاة في مواعيدها", description: "حافظ على أداء الصلوات في أوقاتها، خاصة في أوقات الدراسة. يمكنك تحديد أوقات للمذاكرة بحيث لا تتعارض مع الصلاة، أو أذكار الصلاة تذكرك بأهمية الاستمرارية في العبادة" },
     { number: 2, title: "قراءة القرآن الكريم", description: "خصص وقتًا يوميًا لقراءة القرآن ولو لآيات قليلة. القرآن هو مصدر الهداية والطمأنينة، ويمكن أن يعينك على التركيز والصبر خلال أيام الدراسة" },
     { number: 3, title: "استحضار النية في كل عمل", description: "اجعل نيتك في الدراسة, والبحث عن العلم هي إرضاء الله سبحانه وتعالى. علمك يمكن أن يكون عبادة إذا كان الهدف منه نفع الناس وتحقيق الخير" },
@@ -49,9 +49,9 @@ const advices = [
     { number: 50, title: "الاحتفاظ بتوازن روحي وعقلي", description: "احرص على أن يكون لديك توازن بين جوانب حياتك المختلفة. لا تفرط في الدراسة على حساب روحك أو صحتك، بل حاول أن تكون لديك حياة متوازنة تسهم في بناء شخصيتك من جميع الجوانب" }
 ]
 
-let currentIndex = 0;
-let prev = document.getElementById("prev");
-let next = document.getElementById("next");
+var currentIndex = 0;
+var prev = document.getElementById("prev");
+var next = document.getElementById("next");
 
 function updateButtonStates(index) {
     document.getElementById("advice-number").textContent = advices[index].number;

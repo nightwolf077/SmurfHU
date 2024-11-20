@@ -193,9 +193,10 @@ input[type="text"]:focus {
   bottom: 20px;
   display: flex;
   justify-content: center;
-  gap: 10px;
+  gap: 20px;
   z-index: 1;
   background-color: var(--smurf);
+  padding: 5px 10px;
 }
 
 .popup-controls img {
@@ -463,7 +464,7 @@ input[type="text"]:focus {
 
 footer {
   background-color: black;
-  height: 200px;
+  height: 100%;
   width: 100%;
 }
 
@@ -491,3 +492,14 @@ footer a {
 }
 
 /* end footer */
+
+/*for medium screens*/
+
+@media (max-width: 800px) {
+  .content div {
+    margin: 30px 50px;
+
+  }
+}
+/*for medium screens*/
+

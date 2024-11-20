@@ -245,6 +245,35 @@ $(document).ready(function () {
           .slideDown(400); // Animate the slide-down effect
         });
   /* serv-tips */
+
+  /* start std-to-std*/
+  $("#std-to-std").click(function () {
+    document.querySelector("footer").insertAdjacentHTML("beforebegin", `
+      <div class='slideshow-container' id='std-to-std-slide'>
+        <i class='fas fa-arrow-left back'></i>      
+        <button class='nav-button' id='prev' onclick='prevAdvice()'>&#10094;</button>
+        <div class='advice-box'>
+          <p id='advice-number'></p>
+          <h2 id='advice-title'>Title of Advice</h2>
+          <p id='advice-description'>Description of advice will appear here.</p>
+        </div>
+        <button class='nav-button' id='next' onclick='nextAdvice()'>&#10095;</button>
+      </div>
+    `);
+
+    // Load the script dynamically
+    const script = document.createElement("script");
+    script.src = "std-to-std.js";
+    document.body.appendChild(script);
+
+    // Slide up #tips and slide down #std-slide
+    $("#tips").slideUp(400);
+    $("#std-to-std-slide")
+      .css("display", "flex") // Set display to flex
+      .hide() // Initially hide to enable sliding down
+      .slideDown(400); // Animate the slide-down effect
+    });
+  /* end std-to-std*/
   /*end tips*/ 
 
   /*start steps*/
