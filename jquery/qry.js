@@ -285,6 +285,48 @@ $(document).ready(function () {
 
   });
 
+  $(".note").click(function () {
+    $("#steps").slideUp(400); // Redirect to the specified URL
+    $(".armyContent")
+    .css("display", "flex") // Set display to flex initially
+    .slideDown(400); // Animate the slide-down effect
+  });
+
+  $(".fail").click(function () {
+    $("#steps").slideUp(400); // Redirect to the specified URL
+    $(".failContent")
+    .css("display", "flex") // Set display to flex initially
+    .slideDown(400); // Animate the slide-down effect
+  });
+
+  $(".pull-back").click(function () {
+    $("#steps").slideUp(400); // Redirect to the specified URL
+    $(".pullContent")
+    .css("display", "flex") // Set display to flex initially
+    .slideDown(400); // Animate the slide-down effect
+  });
+
+  $(".add-subject").click(function () {
+    $("#steps").slideUp(400); // Redirect to the specified URL
+    $(".addContent")
+    .css("display", "flex") // Set display to flex initially
+    .slideDown(400); // Animate the slide-down effect
+  });
+
+  $(".network").click(function () {
+    $("#steps").slideUp(400); // Redirect to the specified URL
+    $(".networkContent")
+    .css("display", "flex") // Set display to flex initially
+    .slideDown(400); // Animate the slide-down effect
+  });
+
+  $(".graduate").click(function () {
+    $("#steps").slideUp(400); // Redirect to the specified URL
+    $(".graduateContent")
+    .css("display", "flex") // Set display to flex initially
+    .slideDown(400); // Animate the slide-down effect
+  });
+
   /*end steps*/
 
   /*start webs*/
