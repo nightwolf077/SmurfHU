@@ -1,4 +1,6 @@
 $(document).ready(function () {
+  
+  var currentScript = "";
   $("body,html").css("overflow", "").fadeIn(800);   
   // start header
   $(".logo").animate({ left: "10px" ,opacity: 1}, 800);  // Fade in over 1 second
@@ -96,6 +98,16 @@ $(document).ready(function () {
 
  
 /*start tips*/ 
+
+ $(".religion, .std-tips, .eco, .serv, .std-senpai").click(function () {
+    $("#main").slideUp(400); // Slide up the main content
+    $(".slideshow-container")
+        .hide() // Ensure it's hidden initially
+        .css("display", "flex") // Set display to flex before animation
+        .slideDown(400); // Animate the slide-down effect
+});
+
+
   $(".tipsAndAlerts").click(function () {
     $("#main").slideUp(400); // Redirect to the specified URL
     $("#tips")
@@ -122,25 +134,6 @@ $(document).ready(function () {
   });
   
   $(".std-tips").click(function () {
-    document.querySelector("footer").insertAdjacentHTML("beforebegin", `
-      <div class='slideshow-container' id='std-slide'>
-        <i class='fas fa-arrow-left back'></i>      
-        <button class='nav-button' id='prev' onclick='prevAdvice()'>&#10094;</button>
-        <div class='advice-box'>
-          <p id='advice-number'></p>
-          <h2 id='advice-title'>Title of Advice</h2>
-          <p id='advice-description'>Description of advice will appear here.</p>
-        </div>
-        <button class='nav-button' id='next' onclick='nextAdvice()'>&#10095;</button>
-      </div>
-    `);
-
-    // Load the script dynamically
-    const script = document.createElement("script");
-    script.src = "std-tips.js";
-    document.body.appendChild(script);
-
-    // Slide up #tips and slide down #std-slide
     $("#tips").slideUp(400);
     $("#std-slide")
       .css("display", "flex") // Set display to flex
@@ -148,64 +141,21 @@ $(document).ready(function () {
       .slideDown(400); // Animate the slide-down effect
   });
 
-
-
-
     /*std-tips*/ 
 
   /* rel-tips*/
-  $(".religion").click(function () {
-    document.querySelector("footer").insertAdjacentHTML("beforebegin", `
-      <div class='slideshow-container' id='rel-slide'>
-        <i class='fas fa-arrow-left back'></i>      
-        <button class='nav-button' id='prev' onclick='prevAdvice()'>&#10094;</button>
-        <div class='advice-box'>
-          <p id='advice-number'></p>
-          <h2 id='advice-title'>Title of Advice</h2>
-          <p id='advice-description'>Description of advice will appear here.</p>
-        </div>
-        <button class='nav-button' id='next' onclick='nextAdvice()'>&#10095;</button>
-      </div>
-    `);
-
-    // Load the script dynamically
-    const script = document.createElement("script");
-    script.src = "rel-tips.js";
-    document.body.appendChild(script);
-  
+  $(".religion").click(function () {  
     $("#tips").slideUp(400);
     $("#rel-slide")
       .css("display", "flex") // Set display to flex
       .hide() // Initially hide to enable sliding down
       .slideDown(400); // Animate the slide-down effect
   });
-
-    
-   
   /* rel-tips*/
 
   /* eco-tips */
   
   $(".eco").click(function () {
-    document.querySelector("footer").insertAdjacentHTML("beforebegin", `
-      <div class='slideshow-container' id='eco-slide'>
-        <i class='fas fa-arrow-left back'></i>      
-        <button class='nav-button' id='prev' onclick='prevAdvice()'>&#10094;</button>
-        <div class='advice-box'>
-          <p id='advice-number'></p>
-          <h2 id='advice-title'>Title of Advice</h2>
-          <p id='advice-description'>Description of advice will appear here.</p>
-        </div>
-        <button class='nav-button' id='next' onclick='nextAdvice()'>&#10095;</button>
-      </div>
-    `);
-
-    // Load the script dynamically
-    const script = document.createElement("script");
-    script.src = "eco-tips.js";
-    document.body.appendChild(script);
-
-    // Slide up #tips and slide down #std-slide
     $("#tips").slideUp(400);
     $("#eco-slide")
       .css("display", "flex") // Set display to flex
@@ -214,30 +164,10 @@ $(document).ready(function () {
     });
   
   /* eco-tips */
-
-  /* serv-tips */
-    
   
+    /* serv-tips */
+    
       $(".serv").click(function () {
-        document.querySelector("footer").insertAdjacentHTML("beforebegin", `
-          <div class='slideshow-container' id='serv-slide'>
-            <i class='fas fa-arrow-left back'></i>      
-            <button class='nav-button' id='prev' onclick='prevAdvice()'>&#10094;</button>
-            <div class='advice-box'>
-              <p id='advice-number'></p>
-              <h2 id='advice-title'>Title of Advice</h2>
-              <p id='advice-description'>Description of advice will appear here.</p>
-            </div>
-            <button class='nav-button' id='next' onclick='nextAdvice()'>&#10095;</button>
-          </div>
-        `);
-    
-        // Load the script dynamically
-        const script = document.createElement("script");
-        script.src = "serv-tips.js";
-        document.body.appendChild(script);
-    
-        // Slide up #tips and slide down #std-slide
         $("#tips").slideUp(400);
         $("#serv-slide")
           .css("display", "flex") // Set display to flex
@@ -248,25 +178,6 @@ $(document).ready(function () {
 
   /* start std-to-std*/
   $("#std-to-std").click(function () {
-    document.querySelector("footer").insertAdjacentHTML("beforebegin", `
-      <div class='slideshow-container' id='std-to-std-slide'>
-        <i class='fas fa-arrow-left back'></i>      
-        <button class='nav-button' id='prev' onclick='prevAdvice()'>&#10094;</button>
-        <div class='advice-box'>
-          <p id='advice-number'></p>
-          <h2 id='advice-title'>Title of Advice</h2>
-          <p id='advice-description'>Description of advice will appear here.</p>
-        </div>
-        <button class='nav-button' id='next' onclick='nextAdvice()'>&#10095;</button>
-      </div>
-    `);
-
-    // Load the script dynamically
-    const script = document.createElement("script");
-    script.src = "std-to-std.js";
-    document.body.appendChild(script);
-
-    // Slide up #tips and slide down #std-slide
     $("#tips").slideUp(400);
     $("#std-to-std-slide")
       .css("display", "flex") // Set display to flex
@@ -277,6 +188,7 @@ $(document).ready(function () {
   /*end tips*/ 
 
   /*start steps*/
+
   $(".steps").click(function () {
     $("#main").slideUp(400); // Redirect to the specified URL
     $("#steps")
@@ -322,7 +234,7 @@ $(document).ready(function () {
 
   $(".graduate").click(function () {
     $("#steps").slideUp(400); // Redirect to the specified URL
-    $(".graduateContent")
+    $(".pullContent")
     .css("display", "flex") // Set display to flex initially
     .slideDown(400); // Animate the slide-down effect
   });
@@ -352,14 +264,54 @@ $(document).ready(function () {
     
 
   /*end webs*/
-  
-  $(document).on("click", ".back", function () {
+
+  $(document).on('click', '.backToTips', function() {
+    $(this).parent().slideUp(200); // Fade out the #std-slide container
+    $("#tips").delay(200).slideDown(400); // Slide down the #tips container after a short delay    
+
+      this.currentScript = ""; // Remove the script from the document
+  });
+
+  $(".back").click(function () {  
+    // $(this).parent().fadeOut(200); // Redirect to the specified URL
+    // $("#main").delay(200).slideDown(400); // Redirect to the specified URL
     window.location.href = 'index.html'; // Redirect to the specified URL
   });
   
+  $("#tips .backToMain").click(function () {
+    $("#tips").slideUp(400, function () { // Callback after #tips finishes sliding up
+      $("#main").slideDown(400); // Then slide #main down
+    });
+  });
+
+  $("#steps .backToMain").click(function () {
+    $("#steps").slideUp(400, function () { // Callback after #tips finishes sliding up
+      $("#main").slideDown(400); // Then slide #main down
+    });
+  });
+
+  $("#table .backToMain").click(function () {
+    $("#table").fadeOut( 50 ,function () { // Callback after #tips finishes sliding up
+      $("#main").slideDown(400); // Then slide #main down
+    });
+  });
+
+  $("#webs .backToMain").click(function () {
+    $("#webs").slideUp( 400 ,function () { // Callback after #tips finishes sliding up
+      $("#main").slideDown(400); // Then slide #main down
+    });
+  });
+
+  $(".failContent .backToSteps, .pullContent .backToSteps, .addContent .backToSteps, .networkContent .backToSteps, .graduateContent .backToSteps,.armyContent .backToSteps").click(function () {
+    // Fade out the parent of the clicked button
+    $(this).closest(".failContent, .pullContent, .addContent, .networkContent, .graduateContent, .armyContent").slideUp(400, function () {
+        // After fade out is complete, slide down #steps
+        $("#steps").slideDown(400);
+    });
 });
-// $(".back").click(function () {  
-//   // $(this).parent().fadeOut(200); // Redirect to the specified URL
-//   // $("#main").delay(200).slideDown(400); // Redirect to the specified URL
-//   window.location.href = 'index.html'; // Redirect to the specified URL
-// });
+
+
+
+});
+
+

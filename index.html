@@ -41,7 +41,7 @@
         </a>
       </div>
 
-      <!-- <div class="search">
+      <div class="search">
         <i class="fa fa-search"></i>
         <input
           class="nav-search"
@@ -50,7 +50,7 @@
           placeholder="ابحث عن ما تريد هنا"
           id="searchInput" 
         />
-      </div> -->
+      </div>
 
       
 
@@ -71,8 +71,8 @@
     </div>
     <!-- menu -->
 
-    <!-- <div class="sreach-result content">
-    </div> -->
+    <div class="search-result content" id="main">
+    </div>
 
     <div class="content" id="main">
       <div class="steps">
@@ -110,44 +110,41 @@
 
 <!-- tips -->
 <div class="content" id="tips">
-  <i class="fas fa-arrow-left back"></i>      
+  <i class="fas fa-arrow-left backToMain"></i>      
 
-      <div class="religion" data-key="rel">
+      <div class="religion" data-key="rel" onclick="selectCategory('rel')">
         <img src="images/religion.png"  alt="" />
         <p class="item-title">نصائح دينية</p>
       </div>
 
-      <div class="std-tips" data-key="std">
+      <div class="std-tips" data-key="std" onclick="selectCategory('std')">
         <img src="images/std-tip.png" alt="" />
         <p class="item-title">نصائح طلابية</p>
       </div>
        
       
-      <div class="eco" data-key="eco">
+      <div class="eco" data-key="eco" onclick="selectCategory('eco')">
         <img src="images/eco.png" alt="" />
         <p class="item-title">نصائح اقتصادية</p> 
       </div>
       
-      <div class="serv" data-key="serv">
+      <div class="serv" data-key="serv" onclick="selectCategory('serv')">
         <img src="images/service.png" alt="" />
         <p class="item-title">نصائح خدماتية</p> 
       </div>
 
-      <div class="std-senpai" data-key="std_to_std" id="std-to-std">
+      <div class="std-senpai" data-key="std_to_std" id="std-to-std" onclick="selectCategory('std-to-std')">
         <img src="images/std-senpai-tips.png" alt="" />
         <p class="item-title">نصائح من طلاب</p>
       </div>
 
 </div>
 
-
-
-
 <!-- tips-->
 
 <!-- steps -->
 <div class="content" id="steps">
-  <i class="fas fa-arrow-left back"></i>      
+  <i class="fas fa-arrow-left backToMain"></i>      
 
       <div class="note" data-key="army">
         <img src="images/serv-military.png" alt="" />
@@ -180,11 +177,10 @@
         <p class="item-title">اجراءات التخريج</p>
       </div>
        
-
 </div>
 
 <div class="armyContent" >
-  <i class="fas fa-arrow-left back"></i>      
+  <i class="fas fa-arrow-left backToSteps"></i>      
     <p>السلام عليكم</p>
     <p>من احدى الاشياء اللي لازم كل سنة نعملها هي تجديد دفتر خدمة العلم</p>
     <p>اول اشي بتفوت مبنى القبول والتسجيل</p>
@@ -197,34 +193,34 @@
 </div>
 
 <div class="failContent" >
-  <i class="fas fa-arrow-left back"></i>      
+  <i class="fas fa-arrow-left backToSteps"></i>      
     <p>this is fail</p>
 </div>
 
 <div class="pullContent" >
-  <i class="fas fa-arrow-left back"></i>      
+  <i class="fas fa-arrow-left backToSteps"></i>      
     <p>this is pull</p>
 </div>
 
 <div class="addContent" >
-  <i class="fas fa-arrow-left back"></i>      
+  <i class="fas fa-arrow-left backToSteps"></i>      
     <p>this is add</p>
 </div>
 
 <div class="networkContent" >
-  <i class="fas fa-arrow-left back"></i>      
+  <i class="fas fa-arrow-left backToSteps"></i>      
     <p>this is network</p>
 </div>
 
 <div class="graduateContent" >
-  <i class="fas fa-arrow-left back"></i>      
+  <i class="fas fa-arrow-left backToSteps"></i>      
     <p>this is graduate</p>
 </div>
 <!-- steps-->
 
 <!-- webs -->
 <div class="content" id="webs">
-  <i class="fas fa-arrow-left back"></i>      
+  <i class="fas fa-arrow-left backToMain"></i>      
 
       <div class="w-t-p">
         <img src="images/wtp.png" alt="" />
@@ -254,7 +250,7 @@
 
 <!-- vocabulary -->
 <div class="content" id="table">
-  <i class="fas fa-arrow-left back"></i>      
+  <i class="fas fa-arrow-left backToMain"></i>      
   <p class="table-title">السلام عليكم جميعا</p>
 
       <p class="table-title">
@@ -389,7 +385,20 @@
 </div>
 <!-- vocabulary -->
 
-
+<div class="slideshow-container">
+  <i class="fas fa-arrow-left backToTips"></i>
+  <button class="nav-button" id="prev" onclick="prevAdvice()">
+    &#10094;
+  </button>
+  <div class="advice-box">
+    <p id="advice-number"></p>
+    <h2 id="advice-title">Title of Advice</h2>
+    <p id="advice-description">Description of advice will appear here.</p>
+  </div>
+  <button class="nav-button" id="next" onclick="nextAdvice()">
+    &#10095;
+  </button>
+</div>
 
 
     <footer>
@@ -407,17 +416,18 @@
               ><i class="fab fa-linkedin"></i
                 ></a>
               </div>
-              <p>v1.0.0</p>
+              <p class="version">v1.0.0</p>
       </div>
     </footer>
 
     <script src="jquery/plug.js"></script>
     <script src="jquery/qry.js"></script>
-    <script src="pic.js"></script>
-    <script src="script.js"></script>
-    <!--<script src="search.js"></script> -->
+    <script src="js/pic.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/insertAdvices.js"></script>
+    <script src="js/search.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
+   
 
     
 

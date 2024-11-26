@@ -70,7 +70,7 @@ input[type="text"]:focus {
 
 .nav-menu-toggle span {
   display: block;
-  height: 2px;
+  height: 3px;
   width: 20px;
   background-color: black;
   border: 1px solid black;
@@ -251,6 +251,7 @@ input[type="text"]:focus {
   top: 10px;
   cursor: pointer;
   transition: color 0.2s ease;
+  font-size: 20px;
 }
 
 .close:hover{
@@ -286,7 +287,8 @@ input[type="text"]:focus {
 }
 
 .content div:hover {
-  background-color: black;
+  background-color: #3376a8;
+  cursor: pointer;
 }
 
 .content div img {
@@ -304,15 +306,10 @@ input[type="text"]:focus {
   transition: opacity 0.2s ease;
 }
 
-.content div p:hover {
-  opacity: 0.8;
-  transition: 0.2s;
-  cursor: pointer;
-}
-
-.content div img:hover {
-  opacity: 0.8;
-  cursor: pointer;
+.content div:hover p,
+.content div:hover img {
+  opacity: 0.7;
+  transition: .5s;
 }
 
 /*start table*/
@@ -337,7 +334,10 @@ input[type="text"]:focus {
   text-align: center;
 
 }
-.back{
+.back,
+.backToTips,
+.backToSteps,
+.backToMain{
   position: absolute;
   left: 10px;
   top: 10px;
@@ -418,15 +418,20 @@ input[type="text"]:focus {
 
 
 /*start tips*/
+.backToTips{
+  top: 10px;
+  left: 10px;
+}
 
 .slideshow-container {
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
   flex-direction: row ;
   width: 100%;
   background-color: var(--smurf);
   padding: 45px 0;
+  position: relative;
 }
 
 
@@ -520,6 +525,9 @@ footer a {
   margin: 10px;
 }
 
+footer .version {
+  font-size: 15px;
+}
 /* end footer */
 
 /*for medium screens*/
