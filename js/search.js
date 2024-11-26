@@ -13,40 +13,50 @@ $(document).ready(function () {
     { network: { name: 'network', content_data: 'شبكة,شبكات ,شبكات انترنت,شبكات لاسلكية,انترنت,net,internet,lab,windows,pc,computer,it,network,اتصال' } },
     { graduate: { name: 'graduate', content_data: 'gradutate,grad,خريجين,خريج,متخرج,قسم,دفاتر,دفتر,تخرج' } }
   ];
-
+  
+  $('#searchInput').val('');
   // Handle search input
   $('#searchInput').on('input', function () {
+    const query = $(this).val().toLowerCase().trim(); // Normalize query
+    const mainContentSections = $('#tips div'); // Ensure selecting all sections
+    const parent = $('#main'); // Result container
+    // parent.children().not(".slideshow-container").remove();
 
-    const query = $(this).val().toLowerCase().trim(); // Get and normalize query
-    const parent = $('.search-result'); // Use jQuery for consistency
-
-
-    // Remove all child nodes inside `.sreach-result`
-    parent.empty(); 
-    $('.search-result').nextUntil('footer').hide();
     let hasResults = false;
 
-    // Loop through each div and match based on data-key
-    $('div[data-key]').each(function () {
-      const $this = $(this);
-      const key = $this.data('key'); // Get the data-key attribute
-      const matchedObject = results.find(item => item[key]); // Find the matching object
-
-      // Check if the query matches the content_data of the matched object
-      if (matchedObject && matchedObject[key].content_data.toLowerCase().includes(query)) {
-        $this.show(); // Show the matching div
-        parent.append($this.clone()); // Append a clone to avoid DOM reordering
-        hasResults = true; // Mark as having results
-      } else {
-        $this.hide(); // Hide non-matching divs
-      }
-    });
-
-    // If no results, show a message
-    if (!hasResults && query.length > 0) {
-      parent.append('<p class="no-results">No results found for your query.</p>');
+    if (query.length === 0) {
+      mainContentSections.show(); // Show all sections if no query
+      return;
     }
 
 
+    mainContentSections.each(function () {
+      const $this = $(this);
+      const key = $this.data('key'); // Get data-key attribute
+      const matchedObject = results.find(item => item[key]); // Find corresponding object
+
+      if (matchedObject) {
+        const contentData = matchedObject[key].content_data.toLowerCase(); // Access content_data
+
+        if (contentData.includes(query)) { // Check if content includes the query
+          $this.show(); // Show matching section
+          parent.append($this.clone()); // Clone and append to results container
+          hasResults = true;
+        }
+      }
+    });
+
+    // If no results found
+    if (!hasResults) {
+      parent.append('<p class="no-results">لا يوجد نتائج لبحثك</p>');
+    }
   });
+
+  $(".religion, .std-tips, .eco, .serv, .std-senpai").click(function () {
+    // Hide all other sibling divs by setting their visibility to hidden
+    $("#main div").not(this).css("visibility", "hidden");
+
+  });
+
+
 });

@@ -50,10 +50,22 @@ header {
 
 .search i {
   position: absolute;
-  left: 10px;
-  top: 15px;
+  left: 5px;
+  top: 6px;
   cursor: pointer;
+  padding: 10px;
 }
+
+.religion {
+  pointer-events: auto; /* Make sure it's clickable */
+}
+
+.no-results{
+  font-size: 30px;
+  color: white;
+  padding: 20px;
+}
+
 
 input[type="text"]:focus {
   outline: none;

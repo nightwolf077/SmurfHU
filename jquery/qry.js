@@ -25,6 +25,8 @@ $(document).ready(function () {
   });
 
   $(".search i").click(function() {
+    $("#main").slideDown(400); // Redirect to the specified URL
+
     if ($(this).hasClass('fa-x')) {
       $(".nav-search").val(''); // Clear input field
       $(this).removeClass('fa-x').addClass('fa-search'); // Revert to search icon
@@ -51,7 +53,10 @@ $(document).ready(function () {
   
   $(".close").on("click",function () {
     $(".menu").animate({right: "-210px"});
+
   });
+
+
   
   $(".nav-search")
   .on("focus", function() {
@@ -100,7 +105,19 @@ $(document).ready(function () {
 /*start tips*/ 
 
  $(".religion, .std-tips, .eco, .serv, .std-senpai").click(function () {
-    $("#main").slideUp(400); // Slide up the main content
+    $(this).parent().slideUp(400); // Slide up the main content
+    $(".slideshow-container")
+        .hide() // Ensure it's hidden initially
+        .css("display", "flex") // Set display to flex before animation
+        .slideDown(400); // Animate the slide-down effect
+    console.log("nono");
+    
+ });
+
+ $(document).on("click", ".religion", function() {
+  console.log("this is rel");
+  selectCategory('rel');
+  $(this).parent().slideUp(400); // Slide up the main content
     $(".slideshow-container")
         .hide() // Ensure it's hidden initially
         .css("display", "flex") // Set display to flex before animation
@@ -133,58 +150,6 @@ $(document).ready(function () {
       
   });
   
-  $(".std-tips").click(function () {
-    $("#tips").slideUp(400);
-    $("#std-slide")
-      .css("display", "flex") // Set display to flex
-      .hide() // Initially hide to enable sliding down
-      .slideDown(400); // Animate the slide-down effect
-  });
-
-    /*std-tips*/ 
-
-  /* rel-tips*/
-  $(".religion").click(function () {  
-    $("#tips").slideUp(400);
-    $("#rel-slide")
-      .css("display", "flex") // Set display to flex
-      .hide() // Initially hide to enable sliding down
-      .slideDown(400); // Animate the slide-down effect
-  });
-  /* rel-tips*/
-
-  /* eco-tips */
-  
-  $(".eco").click(function () {
-    $("#tips").slideUp(400);
-    $("#eco-slide")
-      .css("display", "flex") // Set display to flex
-      .hide() // Initially hide to enable sliding down
-      .slideDown(400); // Animate the slide-down effect
-    });
-  
-  /* eco-tips */
-  
-    /* serv-tips */
-    
-      $(".serv").click(function () {
-        $("#tips").slideUp(400);
-        $("#serv-slide")
-          .css("display", "flex") // Set display to flex
-          .hide() // Initially hide to enable sliding down
-          .slideDown(400); // Animate the slide-down effect
-        });
-  /* serv-tips */
-
-  /* start std-to-std*/
-  $("#std-to-std").click(function () {
-    $("#tips").slideUp(400);
-    $("#std-to-std-slide")
-      .css("display", "flex") // Set display to flex
-      .hide() // Initially hide to enable sliding down
-      .slideDown(400); // Animate the slide-down effect
-    });
-  /* end std-to-std*/
   /*end tips*/ 
 
   /*start steps*/
