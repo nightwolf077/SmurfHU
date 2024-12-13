@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نبذة عنا</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+
+        body,
+        html{
+            margin: 0;
+            padding: 0;
+            height: 100px;
+        }
+
+        header{
+            display: flex;
+            justify-content: center;
+            margin-top: 100px;
+        }
+        p{
+            font-size: 30px;
+        }
+
+        footer p {
+            text-align: center;
+        }
+
+        .container,
+        .referenced-people,
+        .contributors,
+        .about{
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+            align-items: center;
+            margin: 20px auto;
+        }
+
+
+        .back{
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            
+        }
+
+        .back a{
+            text-decoration: none;
+            color: black;
+            font-weight: bolder;
+        }
+
+        footer{
+            width: 100%;
+            background-color: black;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 260px;
+            flex-direction: column;
+        }
+
+        h1{
+            font-size: 50px;
+        }
+
+        h2{
+            font-size: 35px;
+        }
+
+        .container{
+            padding: 20px;
+        }
+
+        a{
+            font-size: 25px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>نبذة عنا</h1>
+    </header>
+    <div class="container">
+        <section class="about">
+            <p>
+                هذا نموذج أولي من الموقع وهدفه مساعدة السنافر في الجامعة الهاشمية.<br>
+                تم تطويره من قبل <strong>أمجد الدقور</strong>.
+            </p>
+        </section>
+        <section class="contributors">
+            <h2>المجموعات المتعاونة معنا</h2>
+                <p>مجموعة المهندسين</p>
+        </section>
+        <section class="referenced-people">
+            <h2>الأشخاص المتعاونين معنا</h2>
+                <p>احمد عوجان</p>
+                <P>مثنى عبابنه</P>
+        </section>
+        <div class="back"><a href="index.html">رجوع</a></div>
+    </div>
+    <footer>
+        <p>2024 Amjad Al-Dgour</p>
+        <p>&copy; All rights reserved</p>
+    </footer>
+</body>
+</html>

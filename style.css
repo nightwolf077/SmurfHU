@@ -366,8 +366,9 @@ input[type="text"]:focus {
 .content .t-table{
   width: 70%;
   margin: 20px;
-  border: 5px solid black;
-  background-color: rgb(56, 33, 33);
+  border: 1px solid black;
+  background-image: linear-gradient(to bottom, #330067, #1a3d6d)
+
 }
 
 .content .t-table th{
@@ -382,7 +383,7 @@ input[type="text"]:focus {
   border-right: none;
   padding: 20px;
   margin:  auto;
-  font-size: 20px;
+  font-size: 25px;
   text-align: center;
   width: 10%;
 }
@@ -414,6 +415,42 @@ input[type="text"]:focus {
   background-color: var(--smurf);
   width: 100%;
   position: relative;
+  direction: rtl;
+}
+
+.networkContent img,
+.failContent img{
+  width: 700px;
+  height: 700px;
+  margin-bottom: 30px;
+}
+
+ol{
+  color: white;
+  font-size: 30px;
+  margin-right: 90px;
+  margin-top: 20px;
+}
+
+.skip,
+.muthana{
+  color: #000;
+  cursor: pointer;
+  transition: .5s;
+}
+
+.skip:hover,
+.muthana:hover{
+  color: yellow;
+}
+
+.skip{
+  text-decoration: none;
+  scroll-behavior: auto;
+}
+
+ol li {
+  margin-bottom: 10px;
 }
 
 .armyContent p ,
@@ -477,6 +514,7 @@ input[type="text"]:focus {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  direction: rtl;
 }
 
 #advice-number {
@@ -538,7 +576,7 @@ footer a {
 }
 
 footer .version {
-  font-size: 15px;
+  font-size: 20px;
 }
 /* end footer */
 
@@ -551,4 +589,4 @@ footer .version {
   }
 }
 /*for medium screens*/
-
+ 

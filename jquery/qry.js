@@ -199,10 +199,29 @@ $(document).ready(function () {
 
   $(".graduate").click(function () {
     $("#steps").slideUp(400); // Redirect to the specified URL
-    $(".pullContent")
+    $(".graduateContent")
     .css("display", "flex") // Set display to flex initially
     .slideDown(400); // Animate the slide-down effect
   });
+
+  $(".muthana").click(function () {
+    window.location = "https://www.facebook.com/profile.php?id=100008623173179";
+  });
+
+  document.querySelectorAll('.skip').forEach(span => {
+    span.addEventListener('click', function () {
+        const targetId = this.getAttribute('data-target');
+        const targetSection = document.querySelector(targetId);
+        if (targetSection) {
+            window.scrollTo({
+                top: targetSection.offsetTop,
+                behavior: 'smooth'
+            });
+        }
+    });
+});
+ 
+
 
   /*end steps*/
 
@@ -225,7 +244,9 @@ $(document).ready(function () {
   $(".t-t-v").click(function () {
     window.location.href = 'https://www.naturalreaders.com/online/'; // Redirect to the specified URL
   });
-  
+  $(".canva").click(function () {
+    window.location.href = 'https://www.canva.com/'; // Redirect to the specified URL
+  });
     
 
   /*end webs*/
@@ -278,5 +299,38 @@ $(document).ready(function () {
 
 
 });
+
+
+        function smoothScroll(target, duration) {
+            const start = window.scrollY; // Current scroll position
+            const end = target.getBoundingClientRect().top + start; // Target position
+            const distance = end - start; // Total distance to scroll
+            const startTime = performance.now();
+
+            function scrollStep(currentTime) {
+                const elapsed = currentTime - startTime; // Time elapsed
+                const progress = Math.min(elapsed / duration, 1); // Progress ratio (0 to 1)
+                const ease = progress * (2 - progress); // Ease-in-out function for smoothness
+
+                window.scrollTo(0, start + distance * ease); // Update scroll position
+
+                if (progress < 1) {
+                    requestAnimationFrame(scrollStep); // Continue animation
+                }
+            }
+
+            requestAnimationFrame(scrollStep);
+        }
+
+        document.querySelectorAll('.skip').forEach(span => {
+            span.addEventListener('click', function () {
+                const targetId = this.getAttribute('data-target');
+                const targetSection = document.querySelector(targetId);
+                if (targetSection) {
+                    smoothScroll(targetSection, 1000); // 500ms = 0.5 seconds
+                }
+            });
+        });
+    
 
 
