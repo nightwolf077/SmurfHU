@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en" style="background-color: black;">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/@panzoom/panzoom@latest/dist/panzoom.min.js"></script>
+    <title>Smurf HU</title>
+  </head>
+  <body>
+    <div class="popup-overlay" id="popup">
+      <div class="popup-content">
+        <div class="image-container">
+          <img src="images/your-image.jpg" alt="Popup Image" id="popup-image">
+        </div>
+        <div class="popup-controls">
+          <button class="x" onclick="closePopup()">X</button>
+          <button onclick="zoomIn()">
+            <img src="images/zoom-in.png" alt="">
+          </button>
+          <button onclick="zoomOut()">
+            <img src="images/zoom-out.png" alt="">
+          </button>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    <header>
+      <div class="logo">
+        <a href="index.html">
+          <img src="images/smurflogo.png" alt="" height="100" width="150" />
+
+        </a>
+      </div>
+
+      <!-- <div class="search">
+        <i class="fa fa-search"></i>
+        <input
+          class="nav-search"
+          type="text"
+          size="40"
+          placeholder="ابحث عن ما تريد هنا"
+          id="searchInput" 
+        />
+      </div> -->
+
+      
+
+      <div class="nav-menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </header>
+    <!-- menu -->
+    <div class="menu">
+      <i class="fa-solid fa-x close"></i>
+      <ul>
+        <li><a href="#" onclick="openPopup('images/map.png')">خريطة الجامعة</a></li>
+        <li><a href="#" onclick="openPopup('images/lab-names.jpg')">المختبرات</a></li>
+        <li><a href="#contact" id="contact-leader">للتواصل</a></li>
+        <li><a href="aboutUs.html" id="about-us">نبذة عنا</a></li>
+      </ul>
+    </div>
+    <!-- menu -->
+
+    <!-- <div class="search-result content" id="main">
+    </div> -->
+
+    <div class="content" id="main">
+      <div class="steps">
+        <img src="images/steps.png" alt="" />
+        <p class="item-title">اجراءات</p>
+      </div>
+
+      <div class="Terminologies">
+        <img src="images/trem.png" alt="" />
+        <p class="item-title">مصطلحات</p>
+      </div>
+
+      <div class="tipsAndAlerts">
+        <img src="images/tips.png" alt="" />
+        <p class="item-title">نصائح وتوجيهات</p>
+      </div>
+
+      <div class="webs">
+        <img src="images/webs.png" alt="" />
+        <p class="item-title">مصادر ومواقع</p>
+      </div>
+
+      <div class="test">
+        <img src="images/test.png" alt="" />
+        <p class="item-title">تست بانك</p>
+      </div>
+
+      <div class="low">
+        <img src="images/rules.png" alt="" />
+        <p class="item-title">قوانين الجامعة</p>
+      </div>
+
+
+    </div>
+
+<!-- tips -->
+<div class="content" id="tips">
+  <i class="fas fa-arrow-left backToMain"></i>      
+
+      <div class="religion" data-key="rel">
+        <img src="images/religion.png"  alt="" />
+        <p class="item-title">نصائح دينية</p>
+      </div>
+
+      <div class="std-tips" data-key="std" onclick="selectCategory('std')">
+        <img src="images/std-tip.png" alt="" />
+        <p class="item-title">نصائح طلابية</p>
+      </div>
+       
+      
+      <div class="eco" data-key="eco" onclick="selectCategory('eco')">
+        <img src="images/eco.png" alt="" />
+        <p class="item-title">نصائح اقتصادية</p> 
+      </div>
+      
+      <div class="serv" data-key="serv" onclick="selectCategory('serv')">
+        <img src="images/service.png" alt="" />
+        <p class="item-title">نصائح خدماتية</p> 
+      </div>
+
+      <div class="std-senpai" data-key="std_to_std" id="std-to-std" onclick="selectCategory('std-to-std')">
+        <img src="images/std-senpai-tips.png" alt="" />
+        <p class="item-title">نصائح من طلاب</p>
+      </div>
+
+</div>
+
+<!-- tips-->
+
+<!-- steps -->
+<div class="content" id="steps">
+  <i class="fas fa-arrow-left backToMain"></i>      
+
+      <div class="note" data-key="army">
+        <img src="images/serv-military.png" alt="" />
+        <p class="item-title">تجديد دفتر خدمة العلم</p>
+      </div>
+
+      <div class="fail" data-key="drop_sub">
+        <img src="images/fail.png"  alt="" />
+        <p class="item-title">اسقاط مادة</p>
+      </div>
+       
+      <!-- <div class="pull-back" data-key="withdraw_sub">
+        <img src="images/pull-back.png" alt="" />
+        <p class="item-title">سحب مادة</p>
+      </div> -->
+       
+      <!-- <div class="add-subject" data-key="add_sub">
+        <img src="images/add.png" alt="" />
+        <p class="item-title">تسجيل مواد</p>
+      </div> -->
+
+      <div class="network" data-key="network">
+        <img src="images/network.png" alt="" />
+        <p class="item-title">تسجيل دخول لشبكة الانترنت</p>
+      </div>
+
+      
+      <div class="graduate" id="graduate" data-key="graduate">
+        <img src="images/graduate.png" alt="" />
+        <p class="item-title">اجراءات التخريج</p>
+      </div>
+       
+</div>
+
+<div class="armyContent" >
+  <i class="fas fa-arrow-left backToSteps"></i>      
+    <p>السلام عليكم</p>
+    <p>من احدى الاشياء اللي لازم كل سنة نعملها هي تجديد دفتر خدمة العلم</p>
+    <p>اول اشي بتفوت مبنى القبول والتسجيل</p>
+    <p>بعدها بتروح عاليمين وبعدين عالشمال</p>
+    <p>راح تلاقي بوجهك مكتب بتدخل عليه وبتحكيله بدي اجدد دفتر خدمة العلم</p>
+    <p>راح يعطيك ورقة صغيرة بتعبي فيها البيانات</p>
+    <p>وبس تخلص بتدفع دينارين</p>
+    <p>وهيك بيكون تجدد دفترك بنجاح</p>
+    <p>يعطيكو العافيه</p>
+</div>
+
+<div class="failContent" >
+  <i class="fas fa-arrow-left backToSteps"></i>      
+  <p>متى لازم تنسحب من المادة ؟ </p>
+  <p>في حالات كثيرة بس اغلبها اذا كانت المادة ممكن تنزل معدلك</p>
+  <p>طبعا لما تسقط المادة بدك تدفع حقها  </p>
+  <p>لذلك هي مش قرار جيد الا اذا عندك سبب مقنع </p>
+  <p>عندك سبب مقنع ؟ طيب يلا نشوف كيف </p>
+  <p>طبعا اول اشي بتفتح بوابتك الجامعية </p>
+  <p>راح تلاقي قوائم جهة اليمين </p>
+  <p>بتختار العلامات </p>
+  <p>وبعدها بتختار طلب الانسحاب من مادة </p>
+  <p>مثال بالصور : </p>
+  <p><img src="images/steps/maindrop.png" alt=""></p>
+  <p>بتطلعلك هاي الشاشة بيكون عليها المواد اللي عندك</p>
+  <p>بتختار المادة اللي بدك اياها وبتكبس على الانسحاب من المادة</p>
+  <p>مثال بالصور :</p>
+  <p><img src="images/steps/drop.png" alt=""></p>
+  <p>بعدها بتطلعلك هاي الشاشة </p>
+  <p>بيكون مكتوب اسم المادة ورقمها وشعبتها </p>
+  <p>بتكتب رقمك الجامعي وكلمة سرك وبتضغط على تأكيد عملية الانسحاب</p>
+  <p><img src="images/steps/drop2.png" alt=""></p>
+  <p>هيك بتكون انسحبت من المادة بنجاح</p>
+</div>
+
+<!-- <div class="pullContent" >
+  <i class="fas fa-arrow-left backToSteps"></i>      
+    <p>this is pull</p>
+</div>
+
+<div class="addContent" >
+  <i class="fas fa-arrow-left backToSteps"></i>      
+    <p>this is add</p>
+</div> -->
+
+<div class="networkContent" >
+  <i class="fas fa-arrow-left backToSteps"></i>      
+    <p>من احدى الاشياء المتوفرة بالجامعة هي الانترنت الخاص بالطلاب </p>
+    <p>(طبعا سرعته ما راح تكون منيحة وما بيشغل كل المواقع لكنه افضل من عدم وجود نت)</p>
+    <p>طبعا اول اشي بتفتح بوابتك الجامعية </p>
+    <p>راح تلاقي قوائم جهة اليمين </p>
+    <p>بتختار خدمات اخرى </p>
+    <p>بتختار الدخول لشبكات الانترنت </p>
+    <p>مثال بالصور : </p>
+    <p><img src="images/steps/mainnet.png" alt=""></p>
+    <p>بتطلعلك هاي الشاشة بيكون عليها رقمك الجامعي وكلمة سرك</p>
+    <p>اذا ما كانو موجودين راجع اي مشرف من المختبرات مثل الخوارزمي او ابن حيان او غيره</p>
+    <p>مثال بالصور :</p>
+    <p><img src="images/steps/network.png" alt=""></p>
+    <p>بعدها بتفتح تلفونك عند شبكات الواي فاي</p>
+    <p>نختار الشبكة اللاسلكية زي ما هو موجود في الصورة اذا كان نظام تشغيل الهاتف اندرويد</p>
+    <p><img src="images/steps/pic1.png" alt=""></p>
+    <p>نختار الاعدادات كالتالي</p>
+    <p><img src="images/steps/pic 2.png" alt=""></p>
+    <p>او كما في الخيار الآخر حسب نظام تشغيل الهاتف</p>
+    <p>او اذا كان  الهاتف من شركة ابل ندخل كلمة السر و اسم المستخدم كالتالي</p>
+    <p><img src="images/steps/pic 3.png" alt=""></p>
+    <p>وهيك بتكون شبكت نت من الجامعة</p>
+    <p>مع انه عالفاضي &#128517;</p>
+</div>
+</div>
+
+<div class="graduateContent" >
+  <i class="fas fa-arrow-left backToSteps"></i>      
+    <p>بدايةً، ألف مبروك لكل الخريجين أو اللي قربوا يتخرجوا.</p>
+    <p>مشان تتخرج لازم تتم بعض العمليات بالأول، بس قبلها لازم إنك تفرح بتخرجك (اختياري).</p>
+    <p>اذا ما بدك تعمل دفتر او ما بتحب هيك شغلات اكبس <a class="skip" data-target="#skip">هون</a> مشان تنزل عالاجراءات فورا</p>
+    <p>من أكثر الأشياء اللي ممكن تستمتع فيها هي دفاتر التخرج عند شخص محترف مثل <span class="muthana">"muthana"</span></p>
+    <p>والصراحة شغله مرتب وعن تجربة.</p>
+    <p>دفاتر التخرج هي دفاتر بتكون عليها صورتك بتنحط ع طاولة في كليتك وكل شخص بيعرفك أو ما بيعرفك يكتبلك أشياء حلوة.</p>
+    <p>مثلاً بيحكولك إنك شخص لطيف ومنيح وهكذا. وبعض الأحيان بيحطوا مصاري أو رسمات أو ستكرات حسب الأشخاص اللي بكتبولك.</p>
+    <p>هاي بالنسبة لدفاتر التخرج.</p>
+    <p id="skip" >خلينا نبلش بإجراءات التخرج. طبعاً ممكن يكون في اختلافات بسيطة بس مشان تكونوا عارفين وين تروحوا عالأقل.</p>
+
+    <ol>
+        <li>اتأكد إنه الشهادات نزلت قبل لا تروح من شباب دفعتك مشان ما تروح عالفاضي.</li>
+        <li>طبعا لو انت مكرمة بتروح لمكتب المكرمة قبل ما تسلم هويتك الجامعية. </li>
+        <li>روح على مبنى عمادة شؤون الطلبة، أول ما تدخل من جهة مكتبة الخطيب روح عاليمين وامشي لاخر الممر عند اخر غرفة عاليمين وبس تفوت في اول شباك عالشمال بتروح عليه وبيثقبلك الهوية الجامعية.</li>
+        <li>ادفع المبلغ المالي اللي عليك من تلفونك أو من البنك أو ممكن تدفع لحدا بتعرفه وهو يدفعلك إلكترونياً.</li>
+        <li>افتح على البوابة - استطلاع براءة الذمة وشوف إذا كل شيء تمام.</li>
+        <li>أحياناً بيكون في أشياء ما استكملتها، مثلاً أخذت كتاب من المكتبة وما رجعته أو إنك تكون مكرمة ولازم تراجع المكتب ليتأكدوا إنك بريء الذمة.</li>
+        <li>بس تتأكد إنه كل شيء عندك مكتوب جنبه "بريء الذمة"، بتروح عند مسجل كليتك وبتورجيه الجدول تبعك، وممكن يطلبوا ورقة مطبوعة كإثبات بس مو دايماً.</li>
+        <li>بس تستلم الشهادة الجدارية واللي بالإنجليزي واللي بالعربي وبتقدر تأخذ حافظة للشهادة الجدارية كمنظر للناس والزيارات والاهل وكتذكار.</li>
+        <li>بعدها بتروح لمكتبة الخطيب وبتصور الشهادة العدد اللي بدك اياه ,بالعادة الطلاب بطبعو نسختين من كل لغة للمصدقة وللكشف.</li>
+        <li>بعدها بتروح عند المستشار الثقافي في كلية اللغات عند جهة المجمع الشرقي وبتصدق كل ورقة صورتها من عند المستشار..</li>
+        <ul>
+          <li>كشف العلامات بدينار</li>
+          <li>المصدقة بدينار</li>
+        </ul>
+    </ol>
+
+    <p>وهيك بتكون خلصت كل شيء. استمتع بآخر نظرة للجامعة أو اكسر وراها جرة حسب حبك إلها.</p>
+    <p>مع تمنياتي لكم بالتوفيق والنجاح في حياتكم وعملكم ودينكم.</p>
+</div>
+<!-- steps-->
+
+<!-- webs -->
+<div class="content" id="webs">
+  <i class="fas fa-arrow-left backToMain"></i>      
+
+      <div class="w-t-p">
+        <img src="images/wtp.png" alt="" />
+        <p class="item-title">word to pdf</p>
+      </div>
+
+      <div class="gpt">
+        <img src="images/gpt.png" alt="" />
+        <p class="item-title">chatGPT
+          <br>  اداة ذكاء اصطناعي
+        </p>
+      </div>
+       
+      <div class="slide-trans">
+        <img src="images/slide-trans.png" alt="" />
+        <p class="item-title">مترجم سلايدات</p>
+      </div>
+       
+      <div class="t-t-v">
+        <img src="images/t-t-v.png" alt="" />
+        <p class="item-title">نص الى كلام</p>
+      </div>
+      
+      <div class="canva">
+        <img src="images/canva.png" alt="" />
+        <p class="item-title">canva</p>
+      </div>
+       
+
+</div>
+<!-- webs-->
+
+<!-- vocabulary -->
+<div class="content" id="table">
+  <i class="fas fa-arrow-left backToMain"></i>      
+  <p class="table-title">السلام عليكم جميعا</p>
+
+      <p class="table-title">
+        بما انه السنافر بلشت دراسة بحب اقدملكم اهم الاشياء اللي لازم تعرفوها مشان تحضرو حالكم , وعملتهم على شكل جدول كالتالي 
+      </p>
+
+      <table border="1" class="t-table">
+      
+        
+
+        <thead>
+          <tr>
+              <th>English</th>
+              <th>بالعربي</th>
+              <th>شرح</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr>
+              <td>slide</td>
+              <td>شريحة</td>
+              <td>هي الصفحات اللي داخل ال <br>PowerPoint</td>
+          </tr>
+          <tr>
+              <td>break</td>
+              <td>استراحة</td>
+              <td>الاستراحة بين المحاضرات</td>
+          </tr>
+          <tr>
+              <td>syllabus</td>
+              <td>خطة المادة</td>
+              <td>لكل مادة يوجد لديها خطة , وعادة تعطى بأول محاضرة من المادة</td>
+          </tr>
+          <tr>
+              <td>chapter</td>
+              <td>وحدة</td>
+              <td>كل مادة تتكون اما من عدة وحد او كتاب معين</td>
+          </tr>
+          <tr>
+              <td>Mid exam</td>
+              <td>امتحان نصف الفصل</td>
+              <td>امتحان نصف الفصل. لكل مادة نظام امتحانات اما فيرست سكند فاينل او ميد فاينل</td>
+          </tr>
+          <tr>
+              <td>First exam</td>
+              <td>الامتحان الاول</td>
+              <td>الامتحان الاول وغالبا موعده قبل الميد</td>
+          </tr>
+          <tr>
+              <td>Second exam</td>
+              <td>الامتحان الثاني</td>
+              <td>الامتحان الثاني وغالبا موعده بعد الميد</td>
+          </tr>
+          <tr>
+              <td>final</td>
+              <td>الامتحان النهائي</td>
+              <td>الامتحان النهائي وموعده في نهاية الفصل</td>
+          </tr>
+          <tr>
+              <td>quiz</td>
+              <td>امتحان قصير</td>
+              <td>امتحان قصير واحيانا يكون مفاجئ واحيانا بموعد متفق عليه من قبل الدكتور</td>
+          </tr>
+          <tr>
+              <td>project</td>
+              <td>مشروع</td>
+              <td>بعض المواد يكون فيها مشروع اما فردي او ضمن فريق</td>
+          </tr>
+          <tr>
+              <td>presentation</td>
+              <td>تقديم</td>
+              <td>بعض المواد ممكن يطلب الدكتور منك بشكل فردي او ضمن فريق تقديم درس عن موضوع معين امام جميع زملائك بالقاعة</td>
+          </tr>
+          <tr>
+              <td>Smurf</td>
+              <td>سنفور/ة</td>
+              <td>طالب اول سنتين يسمى ب سنفور واخر فصل يسمى خريج</td>
+          </tr>
+          <tr>
+              <td>Credit Hours</td>
+              <td>الساعات المعتمدة</td>
+              <td>عدد الساعات للمواد. كل مادة لها ساعات محددة والاغلب 3، وهي عدد الساعات التي تأخذها بالاسبوع</td>
+          </tr>
+          <tr>
+              <td>curve up</td>
+              <td>رفع المنحنى</td>
+              <td>عندما تكون العلامات سيئة والطلاب انظلموا بالامتحانات، يمكن للدكتور تعديل المنحنى البياني للعلامات</td>
+          </tr>
+          <tr>
+              <td>GPA (Grade Point Average)</td>
+              <td>المعدل التراكمي</td>
+              <td>المعدل الكامل الخاص بك. الفرق بينه وبين المعدل الفصلي هو أن التراكمي يشمل سنواتك بالكامل</td>
+          </tr>
+          <tr>
+              <td>Office Hours</td>
+              <td>الساعات المكتبية</td>
+              <td>الوقت الذي يكون فيه الدكتور متاحاً للإجابة على الأسئلة أو تقديم المساعدة</td>
+          </tr>
+          <tr>
+              <td>Lab</td>
+              <td>مختبر</td>
+              <td>محاضرة عملية أو داخل مختبر</td>
+          </tr>
+          <tr>
+              <td>Student ID</td>
+              <td>الرقم الجامعي</td>
+              <td>الرقم الجامعي الخاص بكل طالب</td>
+          </tr>
+          <tr>
+              <td>Semester</td>
+              <td>الفصل الدراسي</td>
+              <td>الفصل الدراسي</td>
+          </tr>
+          <tr>
+              <td>Internship</td>
+              <td>تدريب</td>
+              <td>بعض التخصصات تتضمن تدريباً أو تدريباً ميدانياً</td>
+          </tr>
+          <tr>
+              <td>square</td>
+              <td>مربع</td>
+              <td>بعض الكليات يوجد بها مربع يتجمع فيه طلاب الكلية</td>
+          </tr>
+          <tr>
+              <td>self-study</td>
+              <td>دراسة ذاتية</td>
+              <td>عندما يطلب الدكتور منك الدراسة الذاتية، يعتبرها بعضهم كتخطي لجزء معين</td>
+          </tr>
+      </tbody>
+      
+      </table>
+</div>
+<!-- vocabulary -->
+
+<div class="slideshow-container">
+  <i class="fas fa-arrow-left backToTips"></i>
+  <button class="nav-button" id="prev" onclick="prevAdvice()">
+    &#10094;
+  </button>
+  <div class="advice-box">
+    <p id="advice-number"></p>
+    <h2 id="advice-title">Title of Advice</h2>
+    <p id="advice-description">Description of advice will appear here.</p>
+  </div>
+  <button class="nav-button" id="next" onclick="nextAdvice()">
+    &#10095;
+  </button>
+</div>
+
+
+    <footer>
+      <div class="footer-content" id="contact">
+        <p>للتواصل </p>
+
+        <div class="social">
+
+          <a href="https://www.facebook.com/aldgoor/">
+            <i class="fab fa-facebook"></i>
+          </a>
+
+          <a href="https://www.instagram.com/amjad_dgoor17/">
+            <i class="fab fa-instagram"></i>
+          </a>
+
+          <a href="mailto:amjadman21@yahoo.com">
+            <i class="fab fa-yahoo"></i>
+          </a>
+
+          <a href="https://www.linkedin.com/in/amjad-aldgoor-333988268/">
+            <i class="fab fa-linkedin"></i>
+          </a>
+
+        </div>
+              <p class="version">v1.0.0</p>
+        </div>
+        <div>
+          <p> All rights reserved &copy;</p>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="jquery/plug.js"></script>
+    <script src="jquery/qry.js"></script>
+    <script src="js/pic.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/insertAdvices.js"></script>
+    <!-- <script src="js/search.js"></script> -->
+   
+
+    
+
+  </body>
+</html>
